@@ -7,6 +7,10 @@ function scaling(num) {
     }
 }
 function coloring(color) {
+    console.log(color);
+    if (color == "rgb(0, 0, 0)") {
+        return "white";
+    }
     if (color == "white") {
         return "black";
     }
