@@ -1,77 +1,26 @@
-<header id="header">
-    <div class="container">
-        <section class="header__box">
-    <a href="/src/index.html">
-    <svg class="header__logo" width="45px" height="35px">
-    <use href="/src/images/symbol-defs.svg#logo">    
-    </use>
-    </svg>
-    </a>
-    <ul class="header__list">
-        <li class="header__item"><a class="navigation" href="#1">Anemone</a></li>
-        <li class="header__item"><a class="navigation" href="#2">About us</a></li>
-        <li class="header__item"><a class="navigation" href="#3">Store</a></li>
-        <li class="header__item"><a class="navigation" href="#4">Delivery</a></li>
-        <li class="header__item"><a class="navigation" href="#5">Blog</a></li>
-    </ul>
-    <button data-open-header-modal type="button" class="header__contact"> 
-           <svg class="header__phone" width="22px" height="22px">
-        <use href="/src/images/symbol-defs.svg#tel">
-        </use>
-    </svg>
-    </button>
-    <button data-open-menu type="button" class="header__button">
-    <svg class="header__menu" width="18px" height="16px">
-        <use href="/src/images/symbol-defs.svg#burger">
-        </use>
-    </svg>
-</button>
-</section>
-</div>
-    <section data-menu-backdrop class="backdrop menu__is-hidden">
-           <button data-close-menu class="menu__close" type="button"> 
-            <svg class="menu__cross" width="24px" height="24px">
-                <use href="/src/images/symbol-defs.svg#cross">    
-                </use>
-                </svg>
-            </button>
-                <ul class="menu__list">
-                    <li class="menu__item">
-                   <button class="list__button"><a class="menu__nav" href="#1">Anemone</a></button>
-                    </li>
-                    <li class="menu__item"> 
-                    <button class="list__button"><a class="menu__nav" href="#2">About us</a></button>
-                    </li>
-                    <li class="menu__item"> 
-                     <button class="list__button"><a class="menu__nav" href="#3">Store</a></button>
-                    </li>
-                    <li class="menu__item"> 
-                     <button class="list__button"><a class="menu__nav" href="#4">Delivery</a></button>
-                    </li>
-                    <li class="menu__item"> 
-                     <button class="list__button"><a class="menu__nav" href="#5">Blog</a></button>
-                    </li> 
-                </ul>
-        </section> 
+<header>
+  <a class="title" style="color: black;" href="./">energy.flow</a>
+  <ul class="pages">
+    <span class="block"></span>
+    <li><button class="active">Home</button></li>
+    <li><button>Favorites</button></li>
+  </ul>
+  <ul class="socials">
+    <li><a href="https://www.facebook.com/goITclub/"><svg><use href="../images/symbol-defs.svg#facebook"></use></svg></a></li>
+    <li><a href="https://www.instagram.com/goitclub/ "><svg><use href="../images/symbol-defs.svg#instagram"></use></svg></a></li>
+    <li><a href="https://www.youtube.com/c/GoIT"><svg><use href="../images/symbol-defs.svg#youtube"></use></svg></a></li>
+  </ul>
+  <button class="burger"><svg><use href="../images/symbol-defs.svg#burger"></use></svg></button>
+  <div class="menu" style="transform: translateY(-110%);">
+    <ul class="pages">
+        <span class="mobile-block"></span>
+    <li><button class="active">Home</button></li>
+    <li><button>Favorites</button></li>
+  </ul>
+  <ul class="socials">
+    <li><a href="https://www.facebook.com/goITclub/"><svg><use href="../images/symbol-defs.svg#facebook"></use></svg></a></li>
+    <li><a href="https://www.instagram.com/goitclub/ "><svg><use href="../images/symbol-defs.svg#instagram"></use></svg></a></li>
+    <li><a href="https://www.youtube.com/c/GoIT"><svg><use href="../images/symbol-defs.svg#youtube"></use></svg></a></li>
+  </ul>
+  </div>
 </header>
-
-<script>
-    const refse = {
-      openModalBtn: document.querySelector("[data-open-menu]"),
-      backdrop: document.querySelector("[data-menu-backdrop]"),
-      closeModalBtn: document.querySelector("[data-close-menu]"), 
-    };
-
-    refse.openModalBtn.addEventListener("click", toggleModal);
-    refse.closeModalBtn.addEventListener("click", toggleModal);
-
-    refse.backdrop.addEventListener("click", logBackdropClick);
-
-    function toggleModal() {
-      refse.backdrop.classList.toggle("menu__is-hidden");
-    }
-
-    function logBackdropClick() {
-      console.log("Це клік в бекдроп");
-    }
-  </script>
