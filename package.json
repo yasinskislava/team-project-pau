@@ -2,22 +2,22 @@
   "name": "parcel-project-template",
   "version": "2.0.0",
   "description": "",
-  "homepage": "https://yasinskislava.github.io/flowers-shop-project/",
+  "homepage": "https://yasinskislava.github.io/team-project-pau/",
   "scripts": {
     "start": "parcel src/*.html",
-    "build": "parcel build src/*.html --public-url /flowers-shop-project/",
+    "build": "parcel build src/*.html --public-url /team-project-pau/",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/goitacademy/flowers-shop-project.git"
+    "url": "git+https://github.com/goitacademy/team-project-pau.git"
   },
   "keywords": [],
   "author": "Viacheslav Yasinskyi <yasinskislava@gmail.com>",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/goitacademy/flowers-shop-project/issues"
+    "url": "https://github.com/goitacademy/team-project-pau/issues"
   },
   "dependencies": {
     "gh-pages": "^5.0.0",
