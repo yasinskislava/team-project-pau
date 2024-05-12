@@ -5,7 +5,7 @@
 
 // img
 
-.hero__img-box{
+.hero__img-box {
     position: relative;
 }
 
@@ -17,9 +17,17 @@
     background: url(../images/desktop-hero.jpg) lightgray no-repeat;
 }
 
+@media screen and (max-width: 769px) {
+    .hero__img {
+        width: 248px;
+        height: 884px;
+        background: url(../images/tablet-hero.jpg) lightgray no-repeat;
+    }
+}
+
 .hero__hashtags-box {
     position: absolute;
-    bottom: 20px; 
+    bottom: 20px;
     left: 48px;
     display: flex;
     width: 196px;
@@ -28,6 +36,12 @@
     gap: 8px;
     flex-wrap: wrap;
     gap: 10px;
+}
+@media screen and (max-width: 769px) {
+    .hero__hashtags-box {
+        left: 10%;
+        bottom: 8%;
+    }
 }
 
 .hero__hashtags {
@@ -54,6 +68,14 @@
     background: #FFF;
 }
 
+@media screen and (max-width: 769px) {
+    .hero__card-box {
+        width: 488px;
+        height: 884px;
+        flex-shrink: 0;
+    }
+}
+
 .hero__card-title {
     margin-bottom: 0%;
     padding: 32px;
@@ -68,6 +90,15 @@
     letter-spacing: -2.4px;
 }
 
+@media screen and (max-width: 769px) {
+    .hero__card-title {
+        width: 424px;
+        font-size: 98px;
+        line-height: 95px;
+        letter-spacing: -1.96px;
+    }
+}
+
 .hero__card-span {
     color: #7E847F;
     font-family: "DM Sans";
@@ -77,6 +108,15 @@
     line-height: 115px;
     letter-spacing: -2.4px;
 }
+
+@media screen and (max-width: 769px) {
+    .hero__card-span {
+        font-size: 98px;
+        line-height: 95px;
+        letter-spacing: -1.96px;
+    }
+}
+
 
 .hero__card-text {
     padding: 32px;
@@ -88,4 +128,10 @@
     line-height: 24px;
     letter-spacing: -0.18px;
     width: 528px;
+}
+
+@media screen and (max-width: 769px) {
+    .hero__card-text {
+        width: 396px;
+}
 }
