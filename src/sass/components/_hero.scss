@@ -1,3 +1,91 @@
-.hero{
+.hero {
     display: flex;
+    justify-content: center;
+}
+
+// img
+
+.hero__img-box{
+    position: relative;
+}
+
+.hero__img {
+    width: 704px;
+    height: 884px;
+    flex-shrink: 0;
+    border-radius: 50px 0px 50px 50px;
+    background: url(../images/desktop-hero.jpg) lightgray no-repeat;
+}
+
+.hero__hashtags-box {
+    position: absolute;
+    bottom: 20px; 
+    left: 48px;
+    display: flex;
+    width: 196px;
+    align-items: center;
+    align-content: center;
+    gap: 8px;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.hero__hashtags {
+    position: relative;
+    margin-bottom: 0%;
+    margin-top: 0%;
+    color: #F6F6F6;
+    font-family: "DM Sans";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+    padding: 4px 16px;
+    border-radius: 30px;
+    border: 1px solid rgba(246, 246, 246, 0.30)
+}
+
+// card
+.hero__card-box {
+    width: 704px;
+    height: 884px;
+    flex-shrink: 0;
+    border-radius: 0px 50px 50px 50px;
+    background: #FFF;
+}
+
+.hero__card-title {
+    margin-bottom: 0%;
+    padding: 32px;
+    margin-right: 32px;
+    width: 704px;
+    color: #1B1B1B;
+    font-family: "DM Sans";
+    font-size: 120px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 115px;
+    letter-spacing: -2.4px;
+}
+
+.hero__card-span {
+    color: #7E847F;
+    font-family: "DM Sans";
+    font-size: 120px;
+    font-style: italic;
+    font-weight: 400;
+    line-height: 115px;
+    letter-spacing: -2.4px;
+}
+
+.hero__card-text {
+    padding: 32px;
+    color: #1B1B1B;
+    font-family: "DM Sans";
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: -0.18px;
+    width: 528px;
 }
