@@ -36,7 +36,7 @@ button {
         position: absolute;
         z-index: 1;
         top: 20px;
-        width: calc(100% - 40px);
+        width: calc(100vw - 40px);
         height: 100%;
     }
 }
@@ -55,7 +55,7 @@ button {
     } 
     .container {
         > div {
-            width: calc(100% - 32px);
+            width: calc(100vw - 32px);
         }
     }
 }

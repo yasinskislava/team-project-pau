@@ -4,7 +4,7 @@
     margin-bottom: 16px;
 }
 
-@media screen and (max-width: 376px) {
+@media screen and (max-width: 767px) {
     .hero {
         display: block;
         margin-bottom: 20px;
@@ -25,7 +25,7 @@
     background: url(../images/desktop-hero.jpg) lightgray no-repeat;
 }
 
-@media screen and (max-width: 769px) {
+@media screen and (max-width: 1199px) {
     .hero__img {
         width: 248px;
         height: 884px;
@@ -33,7 +33,7 @@
     }
 }
 
-@media screen and (max-width: 376px) {
+@media screen and (max-width: 767px) {
     .hero__img {
         width: 335px;
         height: 387px;
@@ -54,14 +54,14 @@
     gap: 10px;
 }
 
-@media screen and (max-width: 769px) {
+@media screen and (max-width: 1199px) {
     .hero__hashtags-box {
         left: 10%;
         bottom: 8%;
     }
 }
 
-@media screen and (max-width: 376px) {
+@media screen and (max-width: 767px) {
     .hero__hashtags-box {
         width: 141px;
         left: 3%;
@@ -85,7 +85,7 @@
     border: 1px solid rgba(246, 246, 246, 0.30)
 }
 
-@media screen and (max-width: 376px) {
+@media screen and (max-width: 767px) {
     .hero__hashtags {
         font-size: 12px;
         line-height: 14px;
@@ -105,14 +105,14 @@
     background: #FFF;
 }
 
-@media screen and (max-width: 769px) {
+@media screen and (max-width: 1199px) {
     .hero__card-box {
         width: 488px;
         height: 884px;
     }
 }
 
-@media screen and (max-width: 376px) {
+@media screen and (max-width: 767px) {
     .hero__card-box {
         width: 335px;
         height: 365px;
@@ -134,7 +134,7 @@
     letter-spacing: -2.4px;
 }
 
-@media screen and (max-width: 769px) {
+@media screen and (max-width: 1199px) {
     .hero__card-title {
         width: 424px;
         font-size: 98px;
@@ -143,7 +143,7 @@
     }
 }
 
-@media screen and (max-width: 376px) {
+@media screen and (max-width: 767px) {
     .hero__card-title {
         width: 295px;
         font-size: 56px;
@@ -162,7 +162,7 @@
     letter-spacing: -2.4px;
 }
 
-@media screen and (max-width: 769px) {
+@media screen and (max-width: 1199px) {
     .hero__card-span {
         font-size: 98px;
         line-height: 95px;
@@ -170,7 +170,7 @@
     }
 }
 
-@media screen and (max-width: 376px) {
+@media screen and (max-width: 767px) {
     .hero__card-span {
         font-size: 56px;
         line-height: 50px;
@@ -191,13 +191,13 @@
     width: 528px;
 }
 
-@media screen and (max-width: 769px) {
+@media screen and (max-width: 1199px) {
     .hero__card-text {
         width: 396px;
     }
 }
 
-@media screen and (max-width: 376px) {
+@media screen and (max-width: 767px) {
     .hero__card-text {
         width: 295px;
         font-size: 14px;
