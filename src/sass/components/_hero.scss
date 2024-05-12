@@ -1,6 +1,14 @@
 .hero {
     display: flex;
     justify-content: center;
+    margin-bottom: 16px;
+}
+
+@media screen and (max-width: 376px) {
+    .hero {
+        display: block;
+        margin-bottom: 20px;
+    }
 }
 
 // img
@@ -25,6 +33,14 @@
     }
 }
 
+@media screen and (max-width: 376px) {
+    .hero__img {
+        width: 335px;
+        height: 387px;
+        background: url(../images/mobile-hero.jpg) lightgray no-repeat;
+    }
+}
+
 .hero__hashtags-box {
     position: absolute;
     bottom: 20px;
@@ -37,10 +53,20 @@
     flex-wrap: wrap;
     gap: 10px;
 }
+
 @media screen and (max-width: 769px) {
     .hero__hashtags-box {
         left: 10%;
         bottom: 8%;
+    }
+}
+
+@media screen and (max-width: 376px) {
+    .hero__hashtags-box {
+        width: 141px;
+        left: 3%;
+        bottom: 5%;
+        gap: 4px;
     }
 }
 
@@ -59,6 +85,17 @@
     border: 1px solid rgba(246, 246, 246, 0.30)
 }
 
+@media screen and (max-width: 376px) {
+    .hero__hashtags {
+        font-size: 12px;
+        line-height: 14px;
+        padding: 4px 10px;
+        justify-content: center;
+        align-items: center;
+
+    }
+}
+
 // card
 .hero__card-box {
     width: 704px;
@@ -72,7 +109,14 @@
     .hero__card-box {
         width: 488px;
         height: 884px;
-        flex-shrink: 0;
+    }
+}
+
+@media screen and (max-width: 376px) {
+    .hero__card-box {
+        width: 335px;
+        height: 365px;
+        border-radius: 30px;
     }
 }
 
@@ -99,6 +143,15 @@
     }
 }
 
+@media screen and (max-width: 376px) {
+    .hero__card-title {
+        width: 295px;
+        font-size: 56px;
+        line-height: 50px;
+        letter-spacing: -1.12px;
+    }
+}
+
 .hero__card-span {
     color: #7E847F;
     font-family: "DM Sans";
@@ -114,6 +167,14 @@
         font-size: 98px;
         line-height: 95px;
         letter-spacing: -1.96px;
+    }
+}
+
+@media screen and (max-width: 376px) {
+    .hero__card-span {
+        font-size: 56px;
+        line-height: 50px;
+        letter-spacing: -1.12px;
     }
 }
 
@@ -133,5 +194,14 @@
 @media screen and (max-width: 769px) {
     .hero__card-text {
         width: 396px;
+    }
 }
+
+@media screen and (max-width: 376px) {
+    .hero__card-text {
+        width: 295px;
+        font-size: 14px;
+        line-height: 18px;
+        letter-spacing: -0.14px;
+    }
 }
