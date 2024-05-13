@@ -29,11 +29,14 @@ button {
 }
 
 .container {
+    position: absolute;
+    left: 0;
+    top: 0;
     width: 100%;
     height: auto;
     > div {
         transition: 0.5s;
-        position: absolute;
+        position: relative;
         z-index: 1;
         top: 20px;
         width: calc(100vw - 40px);
