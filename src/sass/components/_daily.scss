@@ -1,0 +1,187 @@
+@media screen and (max-width: 768px) {
+    .daily {
+        margin-top: 20px;
+        justify-content: center;
+        display: block;
+    }
+
+    .daily__img {
+        width: 335px;
+        height: 269px;
+        flex-shrink: 0;
+        border-radius: 30px;
+        background: url(../images/mobile-daily.jpg) no-repeat, #E8E8E8;
+    }
+
+    .daily__card {
+        width: 335px;
+        height: 269px;
+        flex-shrink: 0;
+        border-radius: 30px;
+        background: #1B1B1B;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .daily__card-img {
+        margin-bottom: 50%;
+        margin-right: 18px;
+        width: 20px;
+        height: 20px;
+        flex-shrink: 0;
+        border: solid 1px;
+        padding: 6px;
+        border-style: none;
+        background-color: rgba(246, 246, 246, 0.10);
+        border-radius: 100%;
+    }
+
+    .daily__card-title {
+        color: #F6F6F6;
+        font-feature-settings: 'clig' off, 'liga' off;
+        font-size: 20px;
+        font-weight: 500;
+        line-height: 28px;
+    }
+
+    .daily__card-undertext {
+        color: rgba(246, 246, 246, 0.60);
+        font-size: 14px;
+        line-height: 18px;
+    }
+
+    .daily__card-text {
+        width: 245px;
+        height: 127px;
+        flex-shrink: 0;
+        color: rgba(246, 246, 246, 0.60);
+        font-size: 14px;
+        line-height: 18px;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .daily {
+        margin-top: 20px;
+        justify-content: center;
+        display: flex;
+    }
+
+    .daily__img {
+        width: 704px;
+        height: 302px;
+        border-radius: 50px;
+        background: url(../images/desktop-daily.jpg) no-repeat, #E8E8E8;
+    }
+
+    .daily__card {
+        width: 704px;
+        height: 302px;
+        flex-shrink: 0;
+        border-radius: 50px;
+        background: #1B1B1B;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .daily__card-img {
+        margin-bottom: 20%;
+        margin-right: 18px;
+        width: 32px;
+        height: 32px;
+        flex-shrink: 0;
+        border: solid 1px;
+        padding: 6px;
+        border-style: none;
+        background-color: rgba(246, 246, 246, 0.10);
+        border-radius: 100%;
+    }
+
+    .daily__card-title {
+        color: #F6F6F6;
+        font-feature-settings: 'clig' off, 'liga' off;
+        font-size: 24px;
+        font-weight: 500;
+        line-height: 32px;
+    }
+
+    .daily__card-undertext {
+        color: rgba(246, 246, 246, 0.60);
+        font-size: 14px;
+        line-height: 18px;
+    }
+
+    .daily__card-text {
+        width: 526px;
+        height: 97px;
+        flex-shrink: 0;
+        color: rgba(246, 246, 246, 0.60);
+        font-size: 16px;
+        line-height: 24px;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1200px) {
+    .daily {
+        margin-top: 20px;
+        justify-content: center;
+        display: block;
+    }
+
+    .daily__img {
+        width: 736px;
+        height: 302px;
+        flex-shrink: 0;
+        border-radius: 50px;
+        background: url(../images/tablet-daily.jpg) no-repeat, #E8E8E8;
+    }
+
+    .daily__card {
+        width: 736px;
+        height: 302px;
+        flex-shrink: 0;
+        border-radius: 50px;
+        background: #1B1B1B;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .daily__card-img {
+        margin-bottom: 20%;
+        margin-right: 18px;
+        width: 32px;
+        height: 32px;
+        flex-shrink: 0;
+        border: solid 1px;
+        padding: 6px;
+        border-style: none;
+        background-color: rgba(246, 246, 246, 0.10);
+        border-radius: 100%;
+    }
+
+    .daily__card-title {
+        color: #F6F6F6;
+        font-feature-settings: 'clig' off, 'liga' off;
+        font-size: 24px;
+        font-weight: 500;
+        line-height: 32px;
+    }
+
+    .daily__card-undertext {
+        color: rgba(246, 246, 246, 0.60);
+        font-size: 14px;
+        line-height: 18px;
+    }
+
+    .daily__card-text {
+        width: 526px;
+        height: 97px;
+        flex-shrink: 0;
+        color: rgba(246, 246, 246, 0.60);
+        font-size: 16px;
+        line-height: 24px;
+    }
+}
