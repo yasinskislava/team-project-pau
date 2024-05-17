@@ -19,6 +19,10 @@
     flex-direction: row;
     height: auto;
     gap: 6px;
+    .active-filter {
+        background-color: #7E847F;
+        color: #fff;
+    }
     li {
         border: 1px transparent solid;
         background-color: white;
@@ -83,7 +87,41 @@
     }
 }
 
+.pagination {
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+    justify-content: center;
+    align-items: center;
+    li {
+        transition: 0.5s;
+        cursor: pointer;
+        width: 32px;
+        height: 32px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: rgba(27, 27, 27, 0.40);
+        font-size: 20px;
+        line-height: 1.6;
+    }
+    li:hover {
+        color: black;
+    }
+    .active-page {
+        border-radius: 18px;
+        border: 1px solid #1B1B1B;
+        color: #1B1B1B;
+    }
+}
+
 @media screen and (min-width: 768px) {
+    .pagination {
+        li {
+            font-size: 24px;
+            line-height: 1.33;
+        }
+    }
     .categories {
         margin: 32px 0px;
         gap: 14px;

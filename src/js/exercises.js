@@ -1,9 +1,24 @@
+let page = 1;
+let activeFilter;
+
 export default async function exercises() {
-    let page = 1;
-    document.querySelector(".filters").children[0].addEventListener("click", () => {
+    document.querySelector(".filters").children[0].addEventListener("click", (e) => {
         page = 1;
         document.querySelector(".categories").innerHTML = "";
+        activeFilter.classList.remove("active-filter");
+        e.target.classList.add("active-filter");
+        activeFilter = e.target;
         renderMuscles();
+        renderPages(2);
+    });
+    document.querySelector(".filters").children[1].addEventListener("click", (e) => {
+        page = 1;
+        document.querySelector(".categories").innerHTML = "";
+        activeFilter.classList.remove("active-filter");
+        e.target.classList.add("active-filter");
+        activeFilter = e.target;
+        renderExercises();
+        renderPages(3);
     });
     async function renderMuscles() {
         await fetch(`https://energyflow.b.goit.study/api/filters?filter=Muscles&page=${page}&limit=12`).then(val => val.json()).then(val => {
@@ -19,5 +34,17 @@ export default async function exercises() {
             }
         });
     } 
+    async function renderExercises() {
+
+    }
     renderMuscles();
+    renderPages(2);
+}
+
+function renderPages(num) {
+    document.querySelector('.pagination').innerHTML = "";
+    for (let i = 0; i < num;i++) {
+        document.querySelector(".pagination").insertAdjacentHTML("beforeend", `<li>${i+1}</li>`);
+    }
+    document.querySelector(".pagination").firstElementChild.classList.add("active-page");
 }
