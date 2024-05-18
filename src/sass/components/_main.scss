@@ -29,14 +29,16 @@ button {
 }
 
 .container {
-    position: absolute;
+    position: relative;
+    display: flex;
+    flex-direction: row;
     left: 0;
     top: 0;
     width: 100%;
     height: auto;
     > div {
         transition: 0.5s;
-        position: relative;
+        position: absolute;
         z-index: 1;
         top: 20px;
         width: calc(100vw - 40px);

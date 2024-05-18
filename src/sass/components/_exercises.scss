@@ -14,6 +14,97 @@
         letter-spacing: -0.64px;
     }
 }
+
+.exercises-card {
+    padding: 16px;
+    box-sizing: border-box;
+    width: 295px;
+    height: 165px;
+    border-radius: 15px;
+    background-color: #FFF;
+    ul {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        row-gap: 6px;
+        column-gap: 16px;
+        li {
+            color: rgba(27, 27, 27, 0.40);
+            font-size: 12px;
+            line-height: 1.5;
+            b {
+                color: #1B1B1B;
+            }
+        }
+    }
+    p {
+        margin-top: 25px;
+        margin-bottom: 16px;
+        display: flex;
+        flex-direction: row;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+        font-size: 20px;
+        align-items: center;
+        svg {
+            margin-right: 16px;
+            width: 24px;
+            height: 24px;
+        }
+    }
+
+    .top {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        h3 {
+            margin: 0;
+            box-sizing: border-box;
+            display: inline-flex;
+            padding: 5px 8px;
+            justify-content: center;
+            align-items: center;
+            border-radius: 15px;
+            background: #7E847F;
+            color: #fff;
+            font-size: 12px;
+            font-weight: 500;
+            line-height: normal;
+            margin-right: 16px;
+        }
+        > span {
+            display: flex;
+            flex-direction: row;
+            font-size: 12px;
+            line-height: 1.5;
+            height: 18px;
+            svg {
+                margin-left: 2px;
+                fill: #EEA10C;
+                width: 18px;
+                height: 18px;
+            }
+        }
+        p {
+            margin: 0;
+            margin-left: auto;
+            display: flex;
+            align-items: center;
+            font-size: 14px;
+            line-height: 1.28;
+            svg {
+                stroke: black;
+                fill: black;
+                margin-left: 8px;
+                width: 14px;
+                height: 14px;
+            }
+        }
+    }
+    
+}
+
 .filters {
     display: flex;
     flex-direction: row;
@@ -150,7 +241,7 @@
     }
 }
 
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 1408px) {
     .categories {
         row-gap: 40px;
         column-gap: 20px;
