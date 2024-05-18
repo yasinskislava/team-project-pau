@@ -57,7 +57,7 @@ document.querySelector('.home').style.left = paddingSize();
       pages[0].firstElementChild.classList.add('active');
       block.style.width = '84px';
       block.style.left = '10px';
-      document.querySelector('.favorites').style.left = '100%';
+      document.querySelector('.favorites').style.left = '130%';
       document.querySelector('.home').style.left = paddingSize();
     });
     const trigger = document.querySelector('header > button');
@@ -87,7 +87,7 @@ document.querySelector('.home').style.left = paddingSize();
       mobileBlock.style.top = '0px';
       mobilePages[1].firstElementChild.classList.remove('active');
       mobilePages[0].firstElementChild.classList.add('active');
-      document.querySelector('.favorites').style.left = '100%';
+      document.querySelector('.favorites').style.left = '130%';
       document.querySelector('.home').style.left = paddingSize();
     });
   }
