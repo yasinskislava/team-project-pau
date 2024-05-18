@@ -22,7 +22,6 @@ export default async function exercises() {
         renderExercises();
         renderPages(3);
     });
-    let exercisesUrl = `https://energyflow.b.goit.study/api/exercises?page=1&limit=12`;
     async function renderMuscles() {
         await fetch(`https://energyflow.b.goit.study/api/filters?filter=Muscles&page=${page}&limit=12`).then(val => val.json()).then(val => {
             for (let i of val.results) {
@@ -38,9 +37,8 @@ export default async function exercises() {
         });
     } 
     async function renderExercises() {
-        await fetch(exercisesUrl).then(val => val.json()).then(val => {
+        await fetch(`https://energyflow.b.goit.study/api/exercises?page=${page}&limit=12`).then(val => val.json()).then(val => {
             for (let i of val.results) {
-                console.log(i);
                 const svg = document.querySelector(".burger svg use").href.baseVal.split("#");
                 categories.insertAdjacentHTML(
                   'beforeend',
@@ -50,7 +48,7 @@ export default async function exercises() {
             <span>${i.rating}<svg><use href="${svg[0]}#star"></use></svg></span>
             <p>Start<svg><use href="${svg[0]}#arrow"></use></svg></p>
         </div>
-        <p><svg><use href="${svg[0]}#human"></use></svg>${i.name[0].toUpperCase() + i.name.slice(1)}</p>
+        <p><span><svg><use href="${svg[0]}#human"></use></svg></span>${i.name[0].toUpperCase() + i.name.slice(1)}</p>
         <ul>
             <li>Burned calories: <b>${i.burnedCalories}</b></li>
             <li>Body part: <b>${i.bodyPart[0].toUpperCase() + i.bodyPart.slice(1)}</b></li>

@@ -29,15 +29,7 @@ function svg(value) {
     }
 }
 
-function paddingSize() {
-    if (document.body.clientWidth >= 768) {
-        return '16px';
-    }
-    else {
-        return '20px';
-    }
-}
-document.querySelector('.home').style.left = paddingSize();
+document.querySelector('.home').style.left = "0px";
 
   export default function headerFunc() {
     const pages = document.querySelectorAll('header > .pages li');
@@ -49,7 +41,7 @@ document.querySelector('.home').style.left = paddingSize();
       pages[1].firstElementChild.classList.add('active');
       block.style.width = '105px';
       block.style.left = '96px';
-      document.querySelector('.favorites').style.left = paddingSize();
+      document.querySelector('.favorites').style.left = "0px";
       document.querySelector('.home').style.left = '-100%';
     });
     pages[0].addEventListener('click', () => {
@@ -58,7 +50,7 @@ document.querySelector('.home').style.left = paddingSize();
       block.style.width = '84px';
       block.style.left = '10px';
       document.querySelector('.favorites').style.left = '130%';
-      document.querySelector('.home').style.left = paddingSize();
+      document.querySelector('.home').style.left = "0px";
     });
     const trigger = document.querySelector('header > button');
     const menu = document.querySelector('.menu');
@@ -80,7 +72,7 @@ document.querySelector('.home').style.left = paddingSize();
       mobileBlock.style.top = '46px';
       mobilePages[0].firstElementChild.classList.remove('active');
       mobilePages[1].firstElementChild.classList.add('active');
-      document.querySelector('.favorites').style.left = paddingSize();
+      document.querySelector('.favorites').style.left = "0px";
       document.querySelector('.home').style.left = '-100%';
     });
     mobilePages[0].addEventListener('click', () => {
@@ -88,7 +80,7 @@ document.querySelector('.home').style.left = paddingSize();
       mobilePages[1].firstElementChild.classList.remove('active');
       mobilePages[0].firstElementChild.classList.add('active');
       document.querySelector('.favorites').style.left = '130%';
-      document.querySelector('.home').style.left = paddingSize();
+      document.querySelector('.home').style.left = "0px";
     });
   }
 

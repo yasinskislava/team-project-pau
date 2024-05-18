@@ -47,6 +47,9 @@
         overflow: hidden;
         font-size: 20px;
         align-items: center;
+        span {
+            flex-shrink: 0;
+        }
         svg {
             margin-right: 16px;
             width: 24px;
