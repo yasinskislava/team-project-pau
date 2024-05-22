@@ -55,15 +55,15 @@ flex-shrink: 0;
 }
 
 .list-1-Quote-of-the-day{
-        padding-top: 15px;
+        padding-top: 42px;
         display: flex;
-    
+        margin-left: 20px;
         @media screen and (min-width: 768px) {
-           
+            padding-top: 64px;
+            margin-left: 64px;
     }
         @media screen and (min-width: 1200px) {
-           margin-top: 44px;
-            margin-left: 64px;
+           
            
     }
 }
@@ -74,19 +74,17 @@ flex-shrink: 0;
     font-weight: 400;
     line-height: 18px;
     text-align: left;
+    width: 249px;
+height: 110px;
 
     @media screen and (min-width: 768px) {
         font-size: 16px;
-      
-        line-height: 24px;
-}
-    @media screen and (min-width: 1200px) {
         width: 526px;
         height: 77px;
         flex-shrink: 0;
-        
-       
+        line-height: 24px;
 }
+    @media screen and (min-width: 1200px) {}
 
 }
 .list-2-link-a{
@@ -107,13 +105,9 @@ flex-shrink: 0;
 }
 .list-2-link{
     @media screen and (min-width: 768px) {
-       
+        margin-bottom: 25px;
 }
-    @media screen and (min-width: 1200px) {
-       margin-bottom: 25px;
-        
-       
-}
+    @media screen and (min-width: 1200px) {}
 }
 .list-2-link:last-child{
     @media screen and (min-width: 768px) {
@@ -163,6 +157,7 @@ flex-shrink: 0;
 }
 .svg-quote:last-child{
     width: 48px;
+    fill: #F6F6F6;
 height: 48px;
 flex-shrink: 0;
 
@@ -185,12 +180,10 @@ flex-shrink: 0;
 }
 }
 .list-2-Quote-of-the-day{
-    
+    margin-left: 60px;
     @media screen and (min-width: 768px) {
-       
+        margin-left: 114px;  
         
 }
-    @media screen and (min-width: 1200px) {
-     margin-left: 114px;    
-}
+    @media screen and (min-width: 1200px) {}
 }
