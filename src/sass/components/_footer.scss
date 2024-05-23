@@ -1,6 +1,6 @@
 footer {
     
-    background: linear-gradient(0deg, rgba(27, 27, 27, 0.70) 0%, rgba(27, 27, 27, 0.70) 100%), url(../images/desktop-footer.jpg) lightgray 0px -688.667px / 100% 413.51% no-repeat;
+    background: linear-gradient(0deg, rgba(27, 27, 27, 0.70) 0%, rgba(27, 27, 27, 0.70) 100%), url(../../images/desktop-footer.jpg) lightgray 0px -688.667px / 100% 413.51% no-repeat;
     width: 335px;
     height: 471px;
     flex-shrink: 0;
@@ -26,12 +26,14 @@ footer {
     font-size: 16px;
     font-weight: 700;
     line-height: 18px;
+    margin-bottom: 9px;
     letter-spacing: -0.32px;
 
 
 @media screen and (min-width: 768px) {
     text-align: left;
     font-size: 28px;
+    margin-bottom: 30px;
     line-height: 28px;
     letter-spacing: -0.56px;
 }
@@ -49,21 +51,24 @@ footer {
 
 
 
-@media screen and (min-width: 768px) {}
-
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 768px) {
     display: flex;
     flex-wrap: wrap;
     padding-top: 65px;
 }
 
+@media screen and (min-width: 1200px) {}
+
 }
 
 .box-social {
+padding-left: 25px;
+margin-bottom: 40px;
+padding-top: 40px;
 
-
-
-@media screen and (min-width: 768px) {}
+@media screen and (min-width: 768px) {
+    padding-top: 0px;
+}
 
 @media screen and (min-width: 1200px) {
     padding-left: 48px;
@@ -74,6 +79,7 @@ footer {
 
 .list-social-footer {
 display: flex;
+
 }
 
 
@@ -134,19 +140,35 @@ letter-spacing: -0.64px;
 }
 
 .svg-social-footer {
-width: 28px;
-height: 28px;
+    width: 20px;
+    height: 20px;
+fill: #F6F6F6;
 justify-content: center;
 align-items: center;
+@media screen and (min-width: 768px) {
+    width: 28px;
+    height: 28px;
+}
+
+@media screen and (min-width: 1200px) {}
 }
 
 .li-social-footer {
-border-radius: 10px;
+    display: flex;
+    padding: 6px;
+    align-items: flex-start;
+    gap: 6px;
+    margin-right: 12px;
+    border-radius: 10px;
 border: 1px solid rgba(246, 246, 246, 0.20);
-padding: 8px;
-align-items: center;
-gap: 8px;
-margin-right: 12px;
+display: inline-flex;
+align-items: flex-start;
+gap: 12px;
+@media screen and (min-width: 768px) {
+ 
+}
+
+@media screen and (min-width: 1200px) {}
 
 }
 
@@ -158,18 +180,20 @@ margin-right: 0px;
 
 .box-text-footer {
 
-
+margin-left: 20px;
+margin-bottom: 20px;
     width: 279px;
 
 @media screen and (min-width: 768px) {
     width: 345px;
+    margin-left: 145px;
 }
 
 @media screen and (min-width: 1200px) {
     margin-left: 160px;
     width: 488px;
     height: 186px;
-    margin-right: 110px;
+    margin-right: 160px;
 }
 }
 
@@ -273,13 +297,28 @@ margin-right: 0px;
 }
 
 .box-links {
-
+margin-left: 20px;
     @media screen and (min-width: 768px) {
         margin-left: auto;
         margin-right: auto
 }
     @media screen and (min-width: 1200px) {
         padding-top: 110px;
+
+        
+       
+}
+}
+.box-registration-footer{
+    margin-left: 20px;
+    margin-bottom: 25px;
+    @media screen and (min-width: 768px) {
+       margin-left: 353px;
+       margin-bottom: 120px;
+}
+    @media screen and (min-width: 1200px) {
+        margin-left: 0px;
+        margin-bottom: 0px;
 
         
        
