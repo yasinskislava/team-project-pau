@@ -2,8 +2,21 @@ let page = 1;
 let activeFilter;
 let activePage;
 const categories = document.querySelector(".categories");
+let url = `https://energyflow.b.goit.study/api/exercises?page=${page}&limit=12`;
 
 export default async function exercises() {
+    const search = document.querySelector(".searchbar svg");
+    search.addEventListener("click", request);
+ 
+    function request() {
+        const props = document.querySelector(".searchbar input").value.toLocaleLowerCase().trim();
+        document.querySelector('.searchbar input').value = "";
+        page = 1;
+        url = `https://energyflow.b.goit.study/api/exercises?muscles=${props}&page=${page}&limit=12`;
+        categories.innerHTML = '';
+        renderExercises();
+    }
+
     document.querySelector(".filters").children[0].addEventListener("click", (e) => {
         page = 1;
         categories.innerHTML = "";
@@ -12,6 +25,7 @@ export default async function exercises() {
         activeFilter = e.target;
         categories.classList.remove("bodyParts");
         categories.classList.add("muscles");
+        document.querySelector('.searchbar').classList.add('visibility');
         renderMuscles();
         renderPages(2);
     });
@@ -23,6 +37,8 @@ export default async function exercises() {
         activeFilter = e.target;
         categories.classList.remove('muscles');
         categories.classList.add('bodyParts');
+        document.querySelector(".searchbar").classList.remove("visibility");
+        url = `https://energyflow.b.goit.study/api/exercises?page=${page}&limit=12`;
         renderExercises();
         renderPages(3);
     });
@@ -39,10 +55,27 @@ export default async function exercises() {
                 );
             }
         });
+        const cards = document.querySelectorAll(".muscle-card");
+        for (let i of cards) {
+            i.addEventListener("click", (e) => {
+                page = 1;
+                url = `https://energyflow.b.goit.study/api/exercises?muscles=${e.currentTarget.querySelector("h3").textContent}&page=${page}&limit=12`;
+                page = 1;
+                categories.innerHTML = "";
+                activeFilter.classList.remove("active-filter");
+                e.target.classList.add("active-filter");
+                activeFilter = e.target;
+                categories.classList.remove('muscles');
+                categories.classList.add('bodyParts');
+                document.querySelector(".searchbar").classList.remove("visibility");
+                renderExercises();
+                renderPages(3);
+            });
+        }
     } 
     async function renderExercises() {
         const tempArr = [];
-        await fetch(`https://energyflow.b.goit.study/api/exercises?page=${page}&limit=12`).then(val => val.json()).then(val => {
+        await fetch(url).then(val => val.json()).then(val => {
             for (let i of val.results) {
                 tempArr.push(i);
                 const svg = document.querySelector(".burger svg use").href.baseVal.split("#");
