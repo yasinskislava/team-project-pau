@@ -1,8 +1,8 @@
+const categories = document.querySelector('.categories');
+const notFound = document.querySelector('.favorites__no-add-ex');
 export default async function fav() {
   const favArr = [];
-  const categories = document.querySelector('.favorites .categories');
   const info = JSON.parse(localStorage.getItem('arr'));
-  const notFound = document.querySelector('.favorites__no-add-ex');
   if (info.length === 0) {
     notFound.style.display = 'block';
   } else {
