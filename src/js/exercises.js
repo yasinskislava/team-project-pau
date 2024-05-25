@@ -5,6 +5,7 @@ const categories = document.querySelector('.categories');
 let url = `https://energyflow.b.goit.study/api/exercises?page=${page}&limit=12`;
 
 export default async function exercises() {
+  localStorage.setItem("arr", JSON.stringify([]));
   const search = document.querySelector('.searchbar svg');
   search.addEventListener('click', request);
 
@@ -132,6 +133,14 @@ export default async function exercises() {
           stars[j].classList.add('rated');
         }
         backdrop.classList.remove('visibility');
+        backdrop.querySelector(".favorite-button").addEventListener("click", (e) => {
+            const favArr = JSON.parse(localStorage.getItem("arr"));
+            console.log(favArr);
+            favArr.push(tempArr[i]);
+            localStorage.setItem("arr", JSON.stringify(favArr));
+            var el = e.currentTarget, elClone = el.cloneNode(true);
+            el.parentNode.replaceChild(elClone, el);
+          });
         document.querySelector('.modal > svg').addEventListener('click', () => {
           backdrop.classList.add('visibility');
         });
