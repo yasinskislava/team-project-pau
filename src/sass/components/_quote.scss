@@ -1,81 +1,99 @@
-.img-Quote-of-the-day{
+.Quote-of-the-day {
+
+    justify-content: center;
+
+    @media screen and (min-width: 768px) {}
+
+    @media screen and (min-width: 1200px) {
+        display: flex;
+
+
+    }
+}
+
+
+.img-Quote-of-the-day {
     width: 335px;
-height: 272px;
-flex-shrink: 0;
-border-radius: 30px;
+    height: 272px;
+    flex-shrink: 0;
+    border-radius: 30px;
+
     @media screen and (min-width: 768px) {
         width: 736px;
         height: 302px;
         border-radius: 50px 0px 0px 0px;
-        
-}
+
+    }
+
     @media screen and (min-width: 1200px) {
         width: 704px;
         gap: 0px;
-       
-        
-       
-}
+
+
+
+    }
 
 }
-.box-Quote-of-the-day{
+
+.box-Quote-of-the-day {
 
     background: #7E847F;
     gap: 0px;
     border-radius: 30px;
     width: 335px;
-height: 272px;
-flex-shrink: 0;
+    height: 272px;
+    flex-shrink: 0;
 
     @media screen and (min-width: 768px) {
         width: 736px;
         height: 302px;
         border-radius: 50px 50px 50px 50px;
-}
+    }
+
     @media screen and (min-width: 1200px) {
         width: 704px;
         height: 302px;
         border-radius: 50px 50px 50px 50px;
-        
-       
-}
+
+
+    }
 
 }
-.box-list-Quote-of-the-day{
-   
-  
-        @media screen and (min-width: 768px) {
-           
-    }
-        @media screen and (min-width: 1200px) {
-            display: flex;
-            
-           
-    }
-}
 
-.list-1-Quote-of-the-day{
-        padding-top: 42px;
+.box-list-Quote-of-the-day {
+
+
+    @media screen and (min-width: 768px) {}
+
+    @media screen and (min-width: 1200px) {
         display: flex;
-        margin-left: 20px;
-        @media screen and (min-width: 768px) {
-            padding-top: 64px;
-            margin-left: 64px;
-    }
-        @media screen and (min-width: 1200px) {
-           
-           
+
+
     }
 }
-.list-2-text{
-   
+
+.list-1-Quote-of-the-day {
+    padding-top: 42px;
+    display: flex;
+    margin-left: 20px;
+
+    @media screen and (min-width: 768px) {
+        padding-top: 64px;
+        margin-left: 64px;
+    }
+
+    @media screen and (min-width: 1200px) {}
+}
+
+.list-2-text {
+
     color: #F6F6F699;
     font-size: 14px;
     font-weight: 400;
     line-height: 18px;
     text-align: left;
     width: 249px;
-height: 110px;
+    height: 110px;
 
     @media screen and (min-width: 768px) {
         font-size: 16px;
@@ -83,46 +101,47 @@ height: 110px;
         height: 77px;
         flex-shrink: 0;
         line-height: 24px;
-}
+    }
+
     @media screen and (min-width: 1200px) {}
 
 }
-.list-2-link-a{
+
+.list-2-link-a {
 
     color: #F6F6F6;
     font-size: 16px;
     font-weight: 500;
-    line-height: 24px; /* 150% */
+    line-height: 24px;
+    /* 150% */
 
     @media screen and (min-width: 768px) {
         text-align: left;
-}
-    @media screen and (min-width: 1200px) {
-    
-        
-       
-}
-}
-.list-2-link{
-    @media screen and (min-width: 768px) {
-        margin-bottom: 25px;
-}
+    }
+
     @media screen and (min-width: 1200px) {}
 }
-.list-2-link:last-child{
+
+.list-2-link {
+    margin-bottom: 15px;
+
     @media screen and (min-width: 768px) {
-       
+        margin-bottom: 25px;
+    }
+
+    @media screen and (min-width: 1200px) {}
 }
-    @media screen and (min-width: 1200px) {
-      
-        
-       
+
+.list-2-link:last-child {
+    @media screen and (min-width: 768px) {}
+
+    @media screen and (min-width: 1200px) {}
 }
-}
-.title-list-1-Quote-of-the-day{
-   
+
+.title-list-1-Quote-of-the-day {
+
     color: #F6F6F6;
-    
+
     font-weight: 500;
     line-height: 28px;
     font-size: 20px;
@@ -131,59 +150,72 @@ height: 110px;
     @media screen and (min-width: 768px) {
         text-align: left;
         line-height: 32px;
-font-size: 24px;
-font-weight: 500;
-line-height: 32px; 
-        
-}
-    @media screen and (min-width: 1200px) {
-       
-        
-       
-}
+        font-size: 24px;
+        font-weight: 500;
+        line-height: 32px;
+
+    }
+
+    @media screen and (min-width: 1200px) {}
 
 }
 
-.svg-quote:first-child{
-    width: 18px;
-height: 20px;
-flex-shrink: 0;
+.svg-quote:first-child {
+    width: 34px;
+    height: 32px;
+    flex-shrink: 0;
+
 }
-.list-1-Quote-of-the-day-link:first-child{
+
+.list-1-Quote-of-the-day-link:first-child {
     width: 34px;
     height: 32px;
     flex-shrink: 0;
     margin-right: 16px;
 }
-.svg-quote:last-child{
-    width: 48px;
+
+
+.svg-quote:last-child {
+    width: 28px;
+    height: 28px;
     fill: #F6F6F6;
-height: 48px;
-flex-shrink: 0;
+
+    flex-shrink: 0;
+
+    @media screen and (min-width: 768px) {
+        height: 48px;
+        flex-shrink: 0;
+        width: 48px;
+
+    }
+
+    @media screen and (min-width: 1200px) {}
 
 }
-.list-1-Quote-of-the-day-link:nth-child(2){
 
-
-    margin-right: 60px;
-
-
+.list-1-Quote-of-the-day-link:nth-child(2) {
+    margin-right: 40px;
 
     @media screen and (min-width: 768px) {
         margin-right: 260px;
-        
-}
+
+    }
+
     @media screen and (min-width: 1200px) {
         margin-right: 286px;
-        
-       
+
+
+    }
 }
-}
-.list-2-Quote-of-the-day{
+
+.list-2-Quote-of-the-day {
     margin-left: 60px;
+    margin-top: 10px;
+
     @media screen and (min-width: 768px) {
-        margin-left: 114px;  
-        
-}
+        margin-left: 114px;
+
+    }
+
     @media screen and (min-width: 1200px) {}
 }
