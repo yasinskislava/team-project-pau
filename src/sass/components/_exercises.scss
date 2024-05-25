@@ -19,7 +19,6 @@
     padding: 16px;
     box-sizing: border-box;
     width: 295px;
-    height: 165px;
     border-radius: 15px;
     background-color: #FFF;
     ul {
@@ -37,7 +36,7 @@
             }
         }
     }
-    p {
+    > p {
         margin-top: 25px;
         margin-bottom: 16px;
         display: flex;
@@ -47,6 +46,9 @@
         overflow: hidden;
         font-size: 20px;
         align-items: center;
+        span {
+            flex-shrink: 0;
+        }
         svg {
             margin-right: 16px;
             width: 24px;
@@ -87,6 +89,7 @@
             }
         }
         p {
+            cursor: pointer;
             margin: 0;
             margin-left: auto;
             display: flex;
@@ -105,9 +108,14 @@
     
 }
 
+.wrapper span .rated {
+    fill: #EEA10C;
+}
+
 .filters {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     height: auto;
     gap: 6px;
     .active-filter {
@@ -115,6 +123,9 @@
         color: #fff;
     }
     li {
+        display: flex;
+        justify-content: center;
+        align-items: center;
         border: 1px transparent solid;
         background-color: white;
         width: fit-content;
@@ -146,21 +157,31 @@
 }
 
 .categories {
+    width: 100%;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    gap: 20px;
     margin: 40px 0px;
+    justify-content: center;
+}
+
+.bodyParts {
+    gap: 20px;
+}
+
+.muscles {
+    gap: 20px;
 }
 
 .muscle-card {
+    cursor: pointer;
     border-radius: 12px;
     border: 1px solid rgba(246, 246, 246, 0.30);
     box-sizing: border-box;
     display: flex;
     justify-content: center;
     flex-direction: column;
-    width: 100%;
+    width: 295px;
     padding: 96px 0px;
     h3 {
         margin: 0;
@@ -206,7 +227,256 @@
     }
 }
 
+.backdrop {
+    background: rgba(27, 27, 27, 0.60);
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 8;
+    padding: 20px;
+    box-sizing: border-box;
+    overflow-y: scroll;
+}
+
+.visibility {
+    display: none;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.filters .searchbar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 295px;
+    height: 42px;
+    box-sizing: border-box;
+    input {
+        font-family: inherit;
+        font-size: 14px;
+        line-height: 1.28;
+        margin: 0;
+        padding: 0;
+        &:focus {
+            outline: none;
+        }
+    }
+    svg {
+        cursor: pointer;
+        fill: transparent;
+        stroke: black;
+    }
+}
+
+.modal {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    position: relative;
+    top: 0px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 20px;
+    background: #F6F6F6;
+    padding: 40px 20px;
+    box-sizing: border-box;
+    .wrapper {
+        width: 100%;
+    }
+    .image {
+        width: auto;
+        height: 68.8vw;
+    }
+    .functions {
+        margin-top: 40px;
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        gap: 9px;
+        .favorite-button {
+            color: #fff;
+            background: rgb(126, 132, 127);
+            border: transparent;
+        }
+        button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            border-radius: 30px;
+            height: 42px;
+            width: 100%;
+            border: 1px solid #1B1B1B;
+            font-size: 14px;
+            line-height: 1.28;
+            &:hover {
+                transform: scale(1.01);
+            }
+            svg {
+                fill: transparent;
+                stroke: white;
+                width: 18px;
+                height: 18px;
+            }
+        }
+    }
+    .description {
+        color: rgba(27, 27, 27, 0.60);
+        font-size: 14px;
+        line-height: 1.28;
+    }
+    > svg {
+        cursor: pointer;
+        position: absolute;
+        top: 14px;
+        right: 14px;
+        stroke: black;
+        fill: black;
+        width: 24px;
+        height: 24px;
+    }
+    h3 {
+        margin-bottom: 10px;
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 1;
+        color: #1B1B1B;
+    }
+    span {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        font-size: 12px;
+        line-height: 1.5;
+        color: #1B1B1B;
+        gap: 2px;
+        ul {
+            display: flex;
+            flex-direction: row;
+            gap: 2px;
+            li {
+                width: 18px;
+                height: 18px;
+                svg {
+                    fill: rgba(27, 27, 27, 0.20);
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+        } 
+    }
+    .info {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 20px;
+        width: 100%;
+        margin: 20px 0px; 
+        padding: 10px 0px;
+        border-top: 1px solid rgba(27, 27, 27, 0.20);
+        border-bottom: 1px solid rgba(27, 27, 27, 0.20);
+        li {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            color: rgba(27, 27, 27, 0.40);
+            font-size: 12px;
+            line-height: 1.5;
+            b {
+                font-weight: 500;
+                color: #1B1B1B;
+                font-size: 14px;
+                line-height: 1.28;
+            }
+        }
+    }
+}
+
+.nothing {
+    text-align: center;
+    color: #1B1B1B;
+    font-size: 14px;
+    line-height: 1.28;
+    width: 295px;
+    height: 90px;
+    margin-top: 164px;
+    margin-bottom: 320px;
+    span {
+        color: #7E847F;
+        font-weight: 500;
+    }
+}
+
+
 @media screen and (min-width: 768px) {
+    .nothing {
+        width: 536px;
+        height: 96px;
+        margin-top: 222px;
+        margin-bottom: 585px;
+        font-size: 18px;
+        line-height: 1.33;
+    }
+    .filters .searchbar {
+        width: 246px;
+        margin-left: auto;
+    }
+    .backdrop {
+        padding: 26px;
+    }
+    .modal {
+        top: 50%;
+        transform: translate(-50%, -50%);
+        gap: 24px;
+        flex-direction: row;
+        padding: 40px;
+        .wrapper {
+            width: 53.77%;
+        }
+        .image {
+            width: 35.15vw;
+            height: 33.6vw;
+        }
+        h3 {
+            font-size: 24px;
+            line-height: 1.33;
+        }
+        > svg {
+            top: 16px;
+            right: 16px;
+            width: 28px;
+            height: 28px;
+        }
+        .functions {
+            button {
+                svg {
+                    width: 20px;
+                    height: 20px;
+                }
+            }
+        }
+    }
+    .exercises-card {
+        width: 313px;
+        > p {
+            line-height: 1.3;
+        }
+        .top {
+            p {
+                font-size: 16px;
+                line-height: 1.5;
+                svg {
+                    width: 16px;
+                    height: 16px;
+                }
+            }
+        }
+    }
+
     .pagination {
         li {
             font-size: 24px;
@@ -215,11 +485,16 @@
     }
     .categories {
         margin: 32px 0px;
+    }
+    .bodyParts {
+        gap: 20px 14px;
+    }
+    .muscles {
         gap: 14px;
     }
     .muscle-card {
         padding: 103px 0px;
-        width: calc(50% - 7px);
+        width: 313px;
         h3 {
             font-size: 24px;
         }
@@ -242,11 +517,30 @@
 }
 
 @media screen and (min-width: 1408px) {
-    .categories {
-        row-gap: 40px;
-        column-gap: 20px;
+    .nothing{
+        width: 684px;
+        height: 72px;
+        margin-top: 217px;
+        margin-bottom: 350px;
     }
-    .muscle-card {
-        width: calc(25% - 15px);
+    .filters .searchbar {
+        width: 273px;
+    }
+    .bodyParts {
+        gap: 28px 20px;
+    }
+    .exercises-card {
+        width: 424px;
+    }
+    .muscles {
+        gap: 40px 20px;
+    }
+    .modal {
+        width: 50.8vw;
+        gap: 40px;
+        .image {
+            width: 18.75vw;
+            height: 18vw;
+        }
     }
 }
