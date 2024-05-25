@@ -1,7 +1,7 @@
 let page = 1;
 let activeFilter;
 let activePage;
-const categories = document.querySelector('.categories');
+const categories = document.querySelector('.home .categories');
 let url = `https://energyflow.b.goit.study/api/exercises?page=${page}&limit=12`;
 
 export default async function exercises() {
