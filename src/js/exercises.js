@@ -1,4 +1,4 @@
-import favFunc from './fav';
+
 let page = 1;
 let activeFilter;
 let activePage;
@@ -141,7 +141,6 @@ export default async function exercises() {
             localStorage.setItem("arr", JSON.stringify(favArr));
             var el = e.currentTarget, elClone = el.cloneNode(true);
             el.parentNode.replaceChild(elClone, el);
-            favFunc();
           });
         document.querySelector('.modal > svg').addEventListener('click', () => {
           backdrop.classList.add('visibility');
