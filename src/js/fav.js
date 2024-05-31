@@ -1,6 +1,7 @@
 // document.addEventListener("DOMContentLoaded", ()=>{
+import headerFunc from "./header";
+headerFunc();
   const categories = document.querySelector('.favorites .categories');
-  console.log(categories.innerHTML)
   const favArr = [];
   const info = JSON.parse(localStorage.getItem('arr'));
   const notFound = document.querySelector('.favorites__no-add-ex');
@@ -97,5 +98,4 @@
       }
     }
 
-console.log("if if if my mom had balls she could be my dad so")
 // })

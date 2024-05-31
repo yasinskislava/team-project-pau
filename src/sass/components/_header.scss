@@ -57,6 +57,11 @@ header .pages .active {
         width: 100%;
     }
     a {
+        display: flex;
+        text-align: center;
+        box-sizing: border-box;
+        align-items: center;
+        justify-content: center;
         color: rgb(246, 246, 246);
         background-color: transparent;
         font-family: inherit;
