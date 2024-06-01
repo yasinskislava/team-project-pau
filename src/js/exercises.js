@@ -1,10 +1,9 @@
-
-
 let page = 1;
 let activeFilter;
 let activePage;
 let filtrated = [];
 const categories = document.querySelector('.categories');
+categories.innerHTML = `<div class="loader"></div>`;
 let url = `https://energyflow.b.goit.study/api/exercises?limit=12&page=${page}`;
 
 export default async function exercises() {
@@ -13,6 +12,13 @@ export default async function exercises() {
   search.addEventListener('click', request);
 
   async function request() {
+    document.querySelector(".pagination").style.display = "none";
+    document.querySelector(".filters").firstElementChild.style.pointerEvents = "none";
+    search.style.pointerEvents = "none";
+    categories.innerHTML = `<div class="loader"></div>`;
+    
+    
+    
     const props = document
       .querySelector('.searchbar input')
       .value.toLocaleLowerCase()
@@ -114,36 +120,38 @@ export default async function exercises() {
     } else {
       state = false;
       url = `https://energyflow.b.goit.study/api/exercises?muscles=${props}&page=${page}&limit=12`;
-      categories.innerHTML = '';
-      renderExercises();
+      await renderExercises();
     }
+    document.querySelector('.filters').firstElementChild.style.pointerEvents = 'all';
+    search.style.pointerEvents = 'all';
+    document.querySelector('.pagination').style.display = 'flex';
     document.querySelector('.searchbar input').value = '';
   }
 
   document
     .querySelector('.filters')
-    .children[0].addEventListener('click', e => {
+    .children[0].addEventListener('click', async e => {
+      categories.innerHTML = `<div class="loader"></div>`;
       maxCurrent = 2;
       page = 1;
       document.querySelector('.active-page').textContent = page;
-      categories.innerHTML = '';
       activeFilter.classList.remove('active-filter');
       e.target.classList.add('active-filter');
       activeFilter = e.target;
       categories.classList.remove('bodyParts');
       categories.classList.add('muscles');
       document.querySelector('.searchbar').classList.add('visibility');
-      renderMuscles();
-      
+      await renderMuscles();
+      document.querySelector('.loader').remove();
     });
   document
     .querySelector('.filters')
-    .children[1].addEventListener('click', e => {
+    .children[1].addEventListener('click',async e => {
+      categories.innerHTML = `<div class="loader"></div>`;
       maxCurrent = 99;
       state = false;
       page = 1;
       document.querySelector('.active-page').textContent = page;
-      categories.innerHTML = '';
       activeFilter.classList.remove('active-filter');
       e.target.classList.add('active-filter');
       activeFilter = e.target;
@@ -151,8 +159,7 @@ export default async function exercises() {
       categories.classList.add('bodyParts');
       document.querySelector('.searchbar').classList.remove('visibility');
       url = `https://energyflow.b.goit.study/api/exercises?limit=12&page=${page}`;
-      renderExercises();
-      
+      await renderExercises();
     });
   async function renderMuscles() {
     await fetch(
@@ -174,12 +181,12 @@ export default async function exercises() {
     const cards = document.querySelectorAll('.muscle-card');
     for (let i of cards) {
       i.addEventListener('click', e => {
+        categories.innerHTML = `<div class="loader"></div>`;
         page = 1;
         url = `https://energyflow.b.goit.study/api/exercises?muscles=${e.currentTarget.querySelector('h3').textContent
           }&page=${page}&limit=12`;
         page = 1;
         state = false;
-        categories.innerHTML = '';
         activeFilter.classList.remove('active-filter');
         document
           .querySelector('.filters')
@@ -189,7 +196,6 @@ export default async function exercises() {
         categories.classList.add('bodyParts');
         document.querySelector('.searchbar').classList.remove('visibility');
         renderExercises();
-        
       });
     }
   }
@@ -225,6 +231,7 @@ export default async function exercises() {
         } else {
           categories.innerHTML = `<p class="nothing">Unfortunately, <span>no results</span> were found. You may want to consider other search options to find the exercise you are looking for. Our range is wide and you have the opportunity to find more options that suit your needs.</p>`;
         }
+        document.querySelector('.loader').remove();
         const start = document.querySelectorAll('.exercises-card .top p');
         for (let i = 0; i < start.length; i++) {
           start[i].addEventListener('click', () => {
@@ -317,8 +324,8 @@ export default async function exercises() {
     }
   }
   activeFilter = document.querySelector('.filters').children[0];
-  renderMuscles();
-
+  await renderMuscles();
+  document.querySelector(".loader").remove();
   const left = document.querySelector(".pagination").children[0];
   const right = document.querySelector('.pagination').children[2];
   let func;
@@ -468,3 +475,5 @@ export default async function exercises() {
     }
   }
 }
+
+
