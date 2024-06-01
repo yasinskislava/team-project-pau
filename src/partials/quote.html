@@ -23,8 +23,11 @@
         </ul>
     </div>
     <div>
-
-        <img class="img-Quote-of-the-day" src="./images/desktop-quote.jpg" alt="">
-
+        <picture>
+            <source media="(max-width: 768px )" srcset="./images/mobile-quote.jpg 1x">
+            <source media="(min-width: 768px )" srcset="./images/tablet-quote.jpg 1x">
+            <source media="(min-width: 1440px )" srcset="./images/desktop-quote.jpg 1x">
+            <img class="img-Quote-of-the-day" src="./images/desktop-quote.jpg" alt="">
+        </picture>
     </div>
 </section>
