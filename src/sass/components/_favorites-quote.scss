@@ -4,7 +4,6 @@
     margin-top: 96px;
     width: 100%;
     div {
-        height: 272px;
         width: 100%;
         border-radius: 30px;
     }
@@ -17,9 +16,11 @@
 
 .quote-image {
     background-image: url(../images/mobile-favorites.jpg);
+    height: 272px;
 }
 
 .quote {
+    height: auto;
     position: relative;
     box-sizing: border-box;
     padding: 40px 22px 40px 66px;
@@ -88,9 +89,9 @@
     .favorites-quote {
         margin-top: 180px;
         gap: 16px;
-        div {
-            height: 302px;
-        }
+        // div {
+        //     height: 302px;
+        // }
         > div:last-child {
             flex-direction: row;
             div {
@@ -100,6 +101,7 @@
     }
     .quote-image {
         background-image: url(../images/tablet-favorites.jpg);
+        height: 302px;
     }
         .quote {
             padding: 64px 80px 64px 130px;

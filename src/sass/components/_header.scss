@@ -2,10 +2,10 @@ header {
     position: absolute;
     z-index: 2;
     padding: 0px 20px;
-    top: 20px;
-    left: 20px;
+    top: 0px;
+    left: 0px;
     height: 56px;
-    width: calc(100vw - 40px);
+    width: 100%;
     display: flex;
     justify-content: space-between;
     flex-direction: row;
@@ -178,8 +178,6 @@ header > button {
         }
     }
     header {
-        top: 16px;
-        left: 16px;
         padding: 0px 32px;
         height: 116px;
         > .socials {
