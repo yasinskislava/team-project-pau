@@ -272,56 +272,7 @@ export default async function exercises() {
           });
         }
       });
-    const start = document.querySelectorAll('.exercises-card .top p');
-    for (let i = 0; i < start.length; i++) {
-      start[i].addEventListener('click', () => {
-        const backdrop = document.querySelector('.backdrop');
-        const ratingList = backdrop.querySelector('.wrapper > span ul');
-        const stars = ratingList.querySelectorAll('svg');
-        for (let j = 0; j < 5; j++) {
-          stars[j].classList.remove('rated');
-        }
-        for (let j = 0; j < Math.floor(tempArr[i].rating); j++) {
-          stars[j].classList.add('rated');
-        }
-        backdrop.classList.remove('visibility');
-        backdrop
-          .querySelector('.favorite-button')
-          .addEventListener('click', e => {
-            const favArr = JSON.parse(localStorage.getItem('arr'));
-            console.log(favArr);
-            favArr.push(tempArr[i]);
-            localStorage.setItem('arr', JSON.stringify(favArr));
-            var el = e.currentTarget,
-              elClone = el.cloneNode(true);
-            el.parentNode.replaceChild(elClone, el);
-          });
-        document.querySelector('.modal > svg').addEventListener('click', () => {
-          backdrop.classList.add('visibility');
-        });
-        backdrop.querySelector(
-          '.image'
-        ).style = `background: linear-gradient(0deg, rgba(27, 27, 27, 0.20) 0%, rgba(27, 27, 27, 0.20) 100%), url(${tempArr[i].gifUrl}) lightgray -7.072px -25.893px / 107.482% 121.729% no-repeat;`;
-        backdrop.querySelector('h3').textContent = `${tempArr[i].name[0].toUpperCase() + tempArr[i].name.slice(1)
-          }`;
-        const info = backdrop.querySelectorAll('.info li b');
-        info[0].textContent = `${tempArr[i].target[0].toUpperCase() + tempArr[i].target.slice(1)
-          }`;
-        info[1].textContent = `${tempArr[i].bodyPart[0].toUpperCase() + tempArr[i].bodyPart.slice(1)
-          }`;
-        info[2].textContent = `${tempArr[i].equipment[0].toUpperCase() + tempArr[i].equipment.slice(1)
-          }`;
-        info[3].textContent = `${tempArr[i].popularity}`;
-        info[4].textContent = `${tempArr[i].burnedCalories}/3 mins`;
-        backdrop.querySelector(
-          '.description'
-        ).textContent = `${tempArr[i].description}`;
-        backdrop.querySelector(
-          '.wrapper > span'
-        ).textContent = `${tempArr[i].rating}`;
-        backdrop.querySelector('.wrapper > span').appendChild(ratingList);
-      });
-    }
+    
   }
   activeFilter = document.querySelector('.filters').children[0];
   await renderMuscles();
