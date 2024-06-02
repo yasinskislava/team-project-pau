@@ -6,8 +6,10 @@ headerFunc();
   const info = JSON.parse(localStorage.getItem('arr'));
   const notFound = document.querySelector('.favorites__no-add-ex');
   const secFav = document.querySelector(`.favorites`);
+  const title = document.querySelector(".favorites__title")
  
     if (info.length === 0) {
+      title.style.display = "none";
       const noFoundFav = document.createElement('div');
       noFoundFav.className = 'favorites__no-add-ex';
       noFoundFav.innerHTML = `
