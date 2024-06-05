@@ -10,7 +10,11 @@
         height: 269px;
         flex-shrink: 0;
         border-radius: 30px;
-        background: url(../images/mobile-daily.jpg) no-repeat, #E8E8E8;
+        background: url(../images/mobile-daily-1x.png) no-repeat, #E8E8E8;
+        background-size: cover;
+        @media screen and (min-device-pixel-ratio: 2),(min-resolution: 192dpi), (min-resolution: 2dppx){
+            background-image: url(../images/mobile-daily-2x.png);
+        }
     }
 
     .daily__card {
@@ -72,7 +76,11 @@
         width: 704px;
         height: 302px;
         border-radius: 50px;
-        background: url(../images/desktop-daily.jpg) no-repeat, #E8E8E8;
+        background: url(../images/desktop-daily-1x.png) no-repeat, #E8E8E8;
+        background-size: cover;
+        @media screen and (min-device-pixel-ratio: 2),(min-resolution: 192dpi), (min-resolution: 2dppx){
+            background-image: url(../images/desktop-daily-2x.png);
+        }
     }
 
     .daily__card {
@@ -135,7 +143,11 @@
         height: 302px;
         flex-shrink: 0;
         border-radius: 50px;
-        background: url(../images/tablet-daily.jpg) no-repeat, #E8E8E8;
+        background: url(../images/tablet-daily-1x.png) no-repeat, #E8E8E8;
+        background-size: cover;
+        @media screen and (min-device-pixel-ratio: 2),(min-resolution: 192dpi), (min-resolution: 2dppx){
+            background-image: url(../images/tablet-daily-2x.png);
+        }
     }
 
     .daily__card {

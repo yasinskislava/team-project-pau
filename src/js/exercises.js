@@ -16,9 +16,7 @@ export default async function exercises() {
     document.querySelector(".filters").firstElementChild.style.pointerEvents = "none";
     search.style.pointerEvents = "none";
     categories.innerHTML = `<div class="loader"></div>`;
-    
-    
-    
+
     const props = document
       .querySelector('.searchbar input')
       .value.toLocaleLowerCase()
@@ -245,18 +243,33 @@ export default async function exercises() {
               stars[j].classList.add('rated');
             }
             backdrop.classList.remove('visibility');
-            backdrop
+            const favArray = JSON.parse(localStorage.getItem('arr'));
+            if (favArray.find(obj => obj._id == tempArr[i]._id)) {
+              backdrop.querySelector(".favorite-button").textContent = "Remove from favorites";
+              backdrop
+                .querySelector('.favorite-button')
+                .addEventListener('click', e => {
+                  const favArr = JSON.parse(localStorage.getItem('arr'));
+                  console.log(favArr);
+                  favArr.splice(favArr.findIndex(obj => obj._id == tempArr[i]._id), 1);
+                  localStorage.setItem('arr', JSON.stringify(favArr));
+                  var el = e.currentTarget,
+                    elClone = el.cloneNode(true);
+                  el.parentNode.replaceChild(elClone, el);
+              });
+            }
+            else {
+              backdrop.querySelector(".favorite-button").textContent = "Add to favorites";
+              backdrop
               .querySelector('.favorite-button')
               .addEventListener('click', e => {
                 const favArr = JSON.parse(localStorage.getItem('arr'));
                 console.log(favArr);
                 favArr.push(tempArr[i]);
                 localStorage.setItem('arr', JSON.stringify(favArr));
-                var el = e.currentTarget,
-                  elClone = el.cloneNode(true);
-                el.parentNode.replaceChild(elClone, el);
-  
+                e.currentTarget.replaceWith(e.currentTarget.cloneNode(true));
               });
+            }
             document.querySelector('.modal > svg').addEventListener('click', () => {backdrop.classList.add('visibility');});
             backdrop.querySelector('.image').style = `background: linear-gradient(0deg, rgba(27, 27, 27, 0.20) 0%, rgba(27, 27, 27, 0.20) 100%), url(${tempArr[i].gifUrl}) lightgray -7.072px -25.893px / 107.482% 121.729% no-repeat;`;
             backdrop.querySelector('h3').textContent = `${tempArr[i].name[0].toUpperCase() + tempArr[i].name.slice(1)}`;
@@ -377,6 +390,7 @@ export default async function exercises() {
     const start = document.querySelectorAll('.exercises-card .top p');
     for (let i = 0; i < start.length; i++) {
       start[i].addEventListener('click', () => {
+        const favArray = JSON.parse(localStorage.getItem("arr"));
         const backdrop = document.querySelector('.backdrop');
         const ratingList = backdrop.querySelector('.wrapper > span ul');
         const stars = ratingList.querySelectorAll('svg');
@@ -387,17 +401,36 @@ export default async function exercises() {
           stars[j].classList.add('rated');
         }
         backdrop.classList.remove('visibility');
-        backdrop
-          .querySelector('.favorite-button')
-          .addEventListener('click', e => {
-            const favArr = JSON.parse(localStorage.getItem('arr'));
-            console.log(favArr);
-            favArr.push(tempArr[i]);
-            localStorage.setItem('arr', JSON.stringify(favArr));
-            var el = e.currentTarget,
-              elClone = el.cloneNode(true);
-            el.parentNode.replaceChild(elClone, el);
-          });
+        if (favArray.find(obj => obj._id == tempArr[i]._id)) {
+          backdrop.querySelector('.favorite-button').textContent =
+            'Remove from favorites';
+          backdrop
+            .querySelector('.favorite-button')
+            .addEventListener('click', e => {
+              const favArr = JSON.parse(localStorage.getItem('arr'));
+              console.log(favArr);
+              favArr.splice(
+                favArr.findIndex(obj => obj._id == tempArr[i]._id),
+                1
+              );
+              localStorage.setItem('arr', JSON.stringify(favArr));
+              var el = e.currentTarget,
+                elClone = el.cloneNode(true);
+              el.parentNode.replaceChild(elClone, el);
+            });
+        } else {
+          backdrop.querySelector('.favorite-button').textContent =
+            'Add to favorites';
+          backdrop
+            .querySelector('.favorite-button')
+            .addEventListener('click', e => {
+              const favArr = JSON.parse(localStorage.getItem('arr'));
+              console.log(favArr);
+              favArr.push(tempArr[i]);
+              localStorage.setItem('arr', JSON.stringify(favArr));
+              e.currentTarget.replaceWith(e.currentTarget.cloneNode(true));
+            });
+        }
         document.querySelector('.modal > svg').addEventListener('click', () => {
           backdrop.classList.add('visibility');
         });
@@ -426,5 +459,4 @@ export default async function exercises() {
     }
   }
 }
-
 

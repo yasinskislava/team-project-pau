@@ -15,7 +15,11 @@
 }
 
 .quote-image {
-    background-image: url(../images/mobile-favorites.jpg);
+    background-image: url(../images/mobile-favorites-1x.png);
+    background-size: cover;
+    @media screen and (min-device-pixel-ratio: 2),(min-resolution: 192dpi), (min-resolution: 2dppx){
+        background-image: url(../images/mobile-favorites-2x.png);
+    }
     height: 272px;
 }
 
@@ -63,7 +67,7 @@
 }
 
 .quote-daily {
-    background: #F6F6F6;
+    background: #fff;
     padding: 96px 100px;
     box-sizing: border-box;
     svg {
@@ -101,7 +105,10 @@
         }
     }
     .quote-image {
-        background-image: url(../images/tablet-favorites.jpg);
+        background-image: url(../images/tablet-favorites-1x.png);
+        @media screen and (min-device-pixel-ratio: 2),(min-resolution: 192dpi), (min-resolution: 2dppx){
+            background-image: url(../images/tablet-favorites-2x.png);
+        }
         height: 302px;
     }
         .quote {
@@ -145,7 +152,10 @@
         }
     }
     .quote-image {
-        background-image: url(../images/desktop-favorites.jpg);
+        background-image: url(../images/desktop-favorites-1x.png);
+        @media screen and (min-device-pixel-ratio: 2),(min-resolution: 192dpi), (min-resolution: 2dppx){
+            background-image: url(../images/desktop-favorites-2x.png);
+        }
     }
     .quote {
         width: 704px;

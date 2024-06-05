@@ -7,10 +7,14 @@
     
     .hero__img {
         flex-shrink: 0;
-        border-radius: 50px 0px 50px 50px;
+        border-radius: 30px;
         width: 335px;
         height: 387px;
-        background: url(../images/mobile-hero.jpg) lightgray no-repeat;
+        background: url(../images/mobile-hero-1x.png) lightgray no-repeat;
+        background-size: cover;
+        @media screen and (min-device-pixel-ratio: 2),(min-resolution: 192dpi), (min-resolution: 2dppx){
+            background-image: url(../images/mobile-hero-2x.png);
+        }
     }
 
     .hero__hashtags-box {
@@ -105,7 +109,11 @@
         height: 884px;
         flex-shrink: 0;
         border-radius: 50px 0px 50px 50px;
-        background: url(../images/desktop-hero.jpg) lightgray no-repeat;
+        background: url(../images/desktop-hero-1x.png) lightgray no-repeat;
+        background-size: cover;
+        @media screen and (min-device-pixel-ratio: 2),(min-resolution: 192dpi), (min-resolution: 2dppx){
+            background-image: url(../images/desktop-hero-2x.png);
+        }
     }
 
 
@@ -200,7 +208,11 @@
         height: 884px;
         flex-shrink: 0;
         border-radius: 50px 0px 50px 50px;
-        background: url(../images/tablet-hero.jpg) lightgray no-repeat;
+        background: url(../images/tablet-hero-1x.png) lightgray no-repeat;
+        background-size: cover;
+        @media screen and (min-device-pixel-ratio: 2),(min-resolution: 192dpi), (min-resolution: 2dppx){
+            background-image: url(../images/tablet-hero-2x.png);
+        }
     }
 
      .hero__hashtags-box {
