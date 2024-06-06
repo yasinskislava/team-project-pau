@@ -1,4 +1,3 @@
-// document.addEventListener("DOMContentLoaded", ()=>{
 import headerFunc from "./header";
 headerFunc();
   const categories = document.querySelector('.favorites .categories');
@@ -7,8 +6,8 @@ headerFunc();
   const notFound = document.querySelector('.favorites__no-add-ex');
   const secFav = document.querySelector(`.favorites`);
   const title = document.querySelector(".favorites__title")
- 
-    if (info.length === 0) {
+  
+  if (info.length === 0) {
       title.style.display = "none";
       const noFoundFav = document.createElement('div');
       noFoundFav.className = 'favorites__no-add-ex';
@@ -32,10 +31,7 @@ headerFunc();
           `<div class="exercises-card">
               <div class="top">
               <h3>WORKOUT</h3>
-              <span>${i.rating}<svg><use href="${
-                svg[0]
-          }#trash"></use></svg></span>
-              <p>Start<svg><use href="${svg[0]}#arrow"></use></svg></p>
+              <span><button class="card-btn"><svg><use href="${svg[0]}#trash"></use></svg></button></span>
               </div>
               <p><span><svg><use href="${svg[0]}#human"></use></svg></span>${
             i.name[0].toUpperCase() + i.name.slice(1)
@@ -51,6 +47,19 @@ headerFunc();
               </ul>
               </div>`
         );
+        const bins = document.querySelectorAll(".card-btn");
+        bins.forEach(bin => {
+          bin.style.backgroundColor = "#fff";
+          bin.style.borderStyle = "none";
+        });
+      }
+        for (let i = 0; i < info.length; i++) {
+      const bins = document.querySelectorAll(".card-btn")[i];
+          bins.addEventListener('click', (event) => { 
+              event.preventDefault(); 
+              const cardToRemove = event.target.closest('.exercises-card'); 
+              cardToRemove.remove(); 
+          });
       }
       const start = document.querySelectorAll(
         '.favorites .exercises-card .top p'
@@ -59,13 +68,13 @@ headerFunc();
         start[i].addEventListener('click', () => {
           const backdrop = document.querySelector('.backdrop');
           const ratingList = backdrop.querySelector('.wrapper > span ul');
-          const stars = ratingList.querySelectorAll('svg');
+          const bin = ratingList.querySelectorAll('svg');
           for (let j = 0; j < 5; j++) {
-            stars[j].classList.remove('rated');
+            bin[j].classList.remove('rated');
           }
           console.log(favArr);
           for (let j = 0; j < Math.floor(favArr[i].rating); j++) {
-            stars[j].classList.add('rated');
+            bin[j].classList.add('rated');
           }
           backdrop.classList.remove('visibility');
           document.querySelector('.modal > svg').addEventListener('click', () => {
@@ -91,13 +100,14 @@ headerFunc();
           info[4].textContent = `${favArr[i].burnedCalories}/3 mins`;
           backdrop.querySelector(
             '.description'
-          ).textContent = `${favArr[i].description}`;
-          backdrop.querySelector(
-            '.wrapper > span'
-          ).textContent = `${favArr[i].rating}`;
+            )
+            backdrop.querySelector(
+              '.wrapper > span'
+              )
           backdrop.querySelector('.wrapper > span').appendChild(ratingList);
         });
       }
     }
+   
 
-// })
+    
