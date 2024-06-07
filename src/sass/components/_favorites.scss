@@ -1,5 +1,13 @@
 @media screen and (max-width: 768px) {
-    .favorites__title{
+    .exercises-card {
+        height: 165px;
+    }
+
+    ul {
+        padding-bottom: 64px;
+    }
+
+    .favorites__title {
         padding-left: 20px;
         padding-bottom: 20px;
     }
@@ -66,7 +74,16 @@
 }
 
 @media screen and (min-width: 1440px) {
-    .favorites__title{
+
+    .exercises-card {
+        height: 165px;
+    }
+
+    ul {
+        padding-bottom: 64px;
+    }
+
+    .favorites__title {
         padding-left: 48px;
         padding-bottom: 32px;
     }
@@ -133,10 +150,19 @@
 }
 
 @media screen and (min-width: 768px) and (max-width: 1440px) {
-    .favorites__title{
-        padding-left: 48px;
-        padding-bottom: 32px;
-        margin-right: 100px;
+
+    .exercises-card {
+        height: 165px;
+    }
+
+    ul.categories {
+        padding-top: 60px;
+        padding-bottom: 24px;
+    }
+
+    .favorites__title {
+        position: absolute;
+        left: 45px;
     }
 
     .favorites {
