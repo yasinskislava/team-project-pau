@@ -2,15 +2,13 @@
     .exercises-card {
         height: 165px;
     }
-    .favorites {
-        ul {
-            padding-bottom: 64px;
-        }
+
+    ul {
+        padding-bottom: 64px;
     }
-    
 
     .favorites__title {
-        padding-top: 40px;
+      
         padding-left: 20px;
         padding-bottom: 20px;
     }
@@ -24,7 +22,7 @@
         background: #E8E8E8;
         display: block;
         justify-content: center;
-        
+
         h2 {
             color: #1B1B1B;
             font-size: 32px;
@@ -79,12 +77,10 @@
     .exercises-card {
         height: 165px;
     }
-    .favorites {
-        ul {
-            padding-bottom: 64px;
-        }
+
+    ul {
+        padding-bottom: 64px;
     }
-    
 
     .favorites__title {
         padding-left: 48px;
@@ -156,12 +152,10 @@
     .exercises-card {
         height: 165px;
     }
-    .favorites {
-        ul.categories {
-            padding-bottom: 24px;
-        }
+
+    ul.categories {
+        padding-bottom: 24px;
     }
-    
 
     .favorites__title {
         position: absolute;
@@ -176,9 +170,7 @@
         background: #E8E8E8;
         display: flex;
         justify-content: center;
-        .categories {
-            margin-top: 90px;
-        }
+
         h2 {
             margin: 32px 0px;
             color: #1B1B1B;
