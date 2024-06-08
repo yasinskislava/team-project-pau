@@ -23,6 +23,7 @@
         justify-content: center;
 
         h2 {
+            margin: 32px 0px;
             color: #1B1B1B;
             font-size: 32px;
             font-weight: inherit;
@@ -41,6 +42,7 @@
     }
 
     .favorites__no-add-title {
+        padding-top: 40px;
         padding-left: 20px;
         color: #1B1B1B;
         font-size: 32px;
@@ -117,6 +119,7 @@
     }
 
     .favorites__no-add-title {
+        padding-top: 64px;
         padding-left: 48px;
         color: #1B1B1B;
         font-size: 44px;
@@ -153,6 +156,7 @@
     }
 
     ul.categories {
+        padding-top: 60px;
         padding-bottom: 24px;
     }
 
@@ -191,7 +195,7 @@
     }
 
     .favorites__no-add-title {
-       
+        padding-top: 64px;
         padding-left: 48px;
         color: #1B1B1B;
         font-size: 44px;
