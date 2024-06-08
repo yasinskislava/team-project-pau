@@ -48,6 +48,7 @@ if (info.length === 0) {
               }</b></li>
               </ul>
               </div>`
+
     );
   }
   setTimeout(() => {
@@ -65,6 +66,7 @@ if (info.length === 0) {
         localStorage.setItem('arr', JSON.stringify(favorArr));
         bins[i].closest('.exercises-card').remove();
       });
+
     }
   }, 200);
 }

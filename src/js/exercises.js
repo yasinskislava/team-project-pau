@@ -244,11 +244,15 @@ export default async function exercises() {
             }
             backdrop.classList.remove('visibility');
             const favArray = JSON.parse(localStorage.getItem('arr'));
+            const svg = document.querySelector('.burger svg use').href.baseVal.split('#');
             if (favArray.find(obj => obj._id == tempArr[i]._id)) {
-              backdrop.querySelector(".favorite-button").textContent = "Remove from favorites";
+              backdrop.querySelector(".favorite-button").textContent = backdrop.querySelector(".favorite-button").textContent.replace("Add to", "Remove from");
+              backdrop.querySelector(".favorite-button").insertAdjacentHTML("beforeend", `<svg><use href="${svg[0]}#heart"></use></svg>`);
+              backdrop.querySelector(".favorite-button svg").style.fill = "#fff"; 
               backdrop
                 .querySelector('.favorite-button')
                 .addEventListener('click', e => {
+                  backdrop.classList.add('visibility');
                   const favArr = JSON.parse(localStorage.getItem('arr'));
                   console.log(favArr);
                   favArr.splice(favArr.findIndex(obj => obj._id == tempArr[i]._id), 1);
@@ -259,10 +263,14 @@ export default async function exercises() {
               });
             }
             else {
-              backdrop.querySelector(".favorite-button").textContent = "Add to favorites";
+              backdrop.querySelector(".favorite-button").textContent = backdrop.querySelector(".favorite-button").textContent.replace("Remove from", "Add to");
+              backdrop.querySelector(".favorite-button").insertAdjacentHTML("beforeend", `<svg><use href="${svg[0]}#heart"></use></svg>`);
+              backdrop.querySelector(".favorite-button svg").style.fill = "#0000"; 
+      
               backdrop
               .querySelector('.favorite-button')
-              .addEventListener('click', e => {
+                .addEventListener('click', e => {
+                backdrop.classList.add('visibility');
                 const favArr = JSON.parse(localStorage.getItem('arr'));
                 console.log(favArr);
                 favArr.push(tempArr[i]);
@@ -270,7 +278,7 @@ export default async function exercises() {
                 e.currentTarget.replaceWith(e.currentTarget.cloneNode(true));
               });
             }
-            document.querySelector('.modal > svg').addEventListener('click', () => {backdrop.classList.add('visibility');});
+            document.querySelector('.modal > svg').addEventListener('click', () => {backdrop.classList.add('visibility')});
             backdrop.querySelector('.image').style = `background: linear-gradient(0deg, rgba(27, 27, 27, 0.20) 0%, rgba(27, 27, 27, 0.20) 100%), url(${tempArr[i].gifUrl}) lightgray -7.072px -25.893px / 107.482% 121.729% no-repeat;`;
             backdrop.querySelector('h3').textContent = `${tempArr[i].name[0].toUpperCase() + tempArr[i].name.slice(1)}`;
             const info = backdrop.querySelectorAll('.info li b');
@@ -402,28 +410,27 @@ export default async function exercises() {
         }
         backdrop.classList.remove('visibility');
         if (favArray.find(obj => obj._id == tempArr[i]._id)) {
-          backdrop.querySelector('.favorite-button').textContent =
-            'Remove from favorites';
+          backdrop.querySelector(".favorite-button").textContent = backdrop.querySelector(".favorite-button").textContent.replace("Add to", "Remove from");
+          backdrop.querySelector(".favorite-button").insertAdjacentHTML("beforeend", `<svg><use href="${svg[0]}#heart"></use></svg>`);
+          backdrop.querySelector(".favorite-button svg").style.fill = "#fff"; 
           backdrop
             .querySelector('.favorite-button')
             .addEventListener('click', e => {
+              backdrop.classList.add('visibility');
               const favArr = JSON.parse(localStorage.getItem('arr'));
               console.log(favArr);
-              favArr.splice(
-                favArr.findIndex(obj => obj._id == tempArr[i]._id),
-                1
-              );
+              favArr.splice(favArr.findIndex(obj => obj._id == tempArr[i]._id),1);
               localStorage.setItem('arr', JSON.stringify(favArr));
-              var el = e.currentTarget,
-                elClone = el.cloneNode(true);
-              el.parentNode.replaceChild(elClone, el);
+              e.currentTarget.replaceWith(e.currentTarget.cloneNode(true));
             });
         } else {
-          backdrop.querySelector('.favorite-button').textContent =
-            'Add to favorites';
+          backdrop.querySelector(".favorite-button").textContent = backdrop.querySelector(".favorite-button").textContent.replace("Remove from", "Add to");
+          backdrop.querySelector(".favorite-button").insertAdjacentHTML("beforeend", `<svg><use href="${svg[0]}#heart"></use></svg>`);
+          backdrop.querySelector(".favorite-button svg").style.fill = "#0000"; 
           backdrop
             .querySelector('.favorite-button')
             .addEventListener('click', e => {
+              backdrop.classList.add('visibility');
               const favArr = JSON.parse(localStorage.getItem('arr'));
               console.log(favArr);
               favArr.push(tempArr[i]);
@@ -459,4 +466,3 @@ export default async function exercises() {
     }
   }
 }
-
