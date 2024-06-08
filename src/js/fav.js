@@ -61,7 +61,6 @@ headerFunc();
               cardToRemove.remove(); 
           });
       }
-      
     }
    
 

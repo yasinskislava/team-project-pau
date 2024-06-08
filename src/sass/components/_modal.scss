@@ -1,0 +1,38 @@
+.rating-backdrop {
+    background: rgba(27, 27, 27, 0.60);
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    box-sizing: border-box;
+    overflow-y: scroll;
+    form {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 335px;
+        height: 357px;
+        border-radius: 20px;
+        background: #F6F6F6;
+        padding: 40px 20px;
+        box-sizing: border-box;
+        > svg {
+            position: absolute;
+            top: 14px;
+            right: 14px;
+            stroke: #1B1B1B;
+            width: 24px;
+            height: 24px;
+        }
+        h3 {
+            color: rgba(27, 27, 27, 0.40);
+            font-size: 12px;
+            line-height: 1.5;
+        }
+    
+    }
+}
