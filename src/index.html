@@ -3,7 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../node_modules/@pnotify/core/dist/PNotify.css" rel="stylesheet" type="text/css" />
+    <link href="../node_modules/@pnotify/mobile/dist/PNotifyMobile.css" rel="stylesheet" type="text/css" />
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
+    <link href="../node_modules/@pnotify/core/dist/BrightTheme.css" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="./sass/index.scss">
     <title>Team Project</title>
 </head>
@@ -66,18 +69,19 @@
                 <p class="description">This refers to your core muscles, which include the rectus abdominis, obliques, and transverse abdominis. They're essential for maintaining posture, stability, and generating force in many movements. Exercises that target the abs include crunches, leg raises, and planks.</p>
                 <ul class="functions">
                     <li><button class="favorite-button">Add to favorites<svg><use href="./images/symbol-defs.svg#heart"></use></svg></button></li>
-                    <li><button>Give a rating</button></li>
+                    <li><button class="rating-button">Give a rating</button></li>
                 </ul>
             </div>
             </div>
             
     </div> 
-    <div class="rating-backdrop">
+    <div class="rating-backdrop visibility">
         <form class="rating-modal">
-            <svg><use href="./images/symbol-defs.svg#cross"></use></svg>
+            <svg class="cross"><use href="./images/symbol-defs.svg#cross"></use></svg>
             <h3>Rating</h3>
             <ul>
-                0.0
+                <div></div>
+                <li><span>0.0</span></li>
                 <li><svg><use href="./images/symbol-defs.svg#star"></use></svg></li>
                 <li><svg><use href="./images/symbol-defs.svg#star"></use></svg></li>
                 <li><svg><use href="./images/symbol-defs.svg#star"></use></svg></li>
@@ -85,7 +89,7 @@
                 <li><svg><use href="./images/symbol-defs.svg#star"></use></svg></li>
             </ul>
             <input type="text" placeholder="Email">
-            <input type="text" placeholder="Your comment">
+            <input class="comment" type="text" placeholder="Your comment">
             <button type="submit">Send</button>
         </form>
     </div>

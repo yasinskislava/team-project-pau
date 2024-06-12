@@ -5,8 +5,18 @@ let filtrated = [];
 const categories = document.querySelector('.categories');
 categories.innerHTML = `<div class="loader"></div>`;
 let url = `https://energyflow.b.goit.study/api/exercises?limit=12&page=${page}`;
+const svg = document.querySelector('.burger svg use').href.baseVal.split('#');
+import { error, success, defaultModules } from '/node_modules/@pnotify/core/dist/PNotify.js';
+import * as PNotifyMobile from '/node_modules/@pnotify/mobile/dist/PNotifyMobile.js';
+ 
+defaultModules.set(PNotifyMobile, {});
 
 export default async function exercises() {
+  document.querySelector(".cross").addEventListener("click", () => {
+    document.querySelector('.rating-backdrop').classList.add("visibility");
+    document.querySelector(".backdrop").classList.remove("visibility");
+  });
+
   localStorage.setItem('arr', JSON.stringify([]));
   const search = document.querySelector('.searchbar svg');
   search.addEventListener('click', request);
@@ -22,6 +32,7 @@ export default async function exercises() {
       .value.toLocaleLowerCase()
       .trim();
     page = 1;
+    document.querySelector('.active-page').textContent = page;
     if (props != '') {
       filtrated = [];
       const bodyParts = [];
@@ -181,6 +192,7 @@ export default async function exercises() {
       i.addEventListener('click', e => {
         categories.innerHTML = `<div class="loader"></div>`;
         page = 1;
+        document.querySelector('.active-page').textContent = page;
         url = `https://energyflow.b.goit.study/api/exercises?muscles=${e.currentTarget.querySelector('h3').textContent
           }&page=${page}&limit=12`;
         page = 1;
@@ -206,9 +218,6 @@ export default async function exercises() {
         if (val.results.length != 0) {
           for (let i of val.results) {
             tempArr.push(i);
-            const svg = document
-              .querySelector('.burger svg use')
-              .href.baseVal.split('#');
             categories.insertAdjacentHTML(
               'beforeend',
               `<div class="exercises-card">
@@ -244,11 +253,11 @@ export default async function exercises() {
             }
             backdrop.classList.remove('visibility');
             const favArray = JSON.parse(localStorage.getItem('arr'));
-            const svg = document.querySelector('.burger svg use').href.baseVal.split('#');
             if (favArray.find(obj => obj._id == tempArr[i]._id)) {
               backdrop.querySelector(".favorite-button").textContent = backdrop.querySelector(".favorite-button").textContent.replace("Add to", "Remove from");
               backdrop.querySelector(".favorite-button").insertAdjacentHTML("beforeend", `<svg><use href="${svg[0]}#heart"></use></svg>`);
               backdrop.querySelector(".favorite-button svg").style.fill = "#fff"; 
+
               backdrop
                 .querySelector('.favorite-button')
                 .addEventListener('click', e => {
@@ -257,10 +266,9 @@ export default async function exercises() {
                   console.log(favArr);
                   favArr.splice(favArr.findIndex(obj => obj._id == tempArr[i]._id), 1);
                   localStorage.setItem('arr', JSON.stringify(favArr));
-                  var el = e.currentTarget,
-                    elClone = el.cloneNode(true);
-                  el.parentNode.replaceChild(elClone, el);
-              });
+                  e.currentTarget.replaceWith(e.currentTarget.cloneNode(true));
+                });
+              
             }
             else {
               backdrop.querySelector(".favorite-button").textContent = backdrop.querySelector(".favorite-button").textContent.replace("Remove from", "Add to");
@@ -278,6 +286,64 @@ export default async function exercises() {
                 e.currentTarget.replaceWith(e.currentTarget.cloneNode(true));
               });
             }
+            backdrop.querySelector(".rating-button").addEventListener("click", (e) => {
+              // e.currentTarget.replaceWith(e.currentTarget.cloneNode(true));
+              document.querySelector('.rating-backdrop').classList.remove("visibility");
+              console.log(tempArr[i]);
+              backdrop.classList.add("visibility");
+              const ratingStars = document.querySelectorAll(".rating-backdrop ul svg");
+              for (let s of ratingStars) {
+                s.style.fill = 'rgba(27, 27, 27, 0.20)';
+              }
+              document.querySelector('.rating-backdrop ul span').textContent = "0.0";
+              document.querySelector('.rating-backdrop ul div').addEventListener("click", (e) => {
+                e.currentTarget.replaceWith(e.currentTarget.cloneNode(true));
+              });
+              document.querySelector('.rating-backdrop ul div').addEventListener("mousemove", (mouse) => {
+                const pos = mouse.offsetX - 26;
+                console.log(pos);
+                const quantity = Math.floor(pos / 28);
+                const gradient = Math.min(((pos - quantity * 28) / 24 * 100), 100) / 100;
+                console.log(parseFloat((gradient / 100).toFixed(1)));
+                document.querySelector(".rating-backdrop ul span").textContent = (quantity + gradient).toFixed(1) > 0 ? `${(quantity + gradient).toFixed(1)}` : `0.0`;
+                for (let s of ratingStars) {
+                  s.style.fill = 'rgba(27, 27, 27, 0.20)';
+                }
+                for (let star = 0; star <= quantity; star++){
+                  ratingStars[star].style.fill = '#EEA10C';
+                }
+                
+              });
+              
+              document.querySelector('.rating-backdrop button').addEventListener("click", (e) => {
+                e.preventDefault();
+                e.currentTarget.replaceWith(e.currentTarget.cloneNode(true));
+                const data = {
+                  rate : parseInt(document.querySelector('.rating-backdrop ul span').textContent),
+                  email : document.querySelectorAll('.rating-backdrop input')[0].value.trim(),
+                  review : document.querySelectorAll('.rating-backdrop input')[1].value.trim()
+                };
+                if (data.rate != "0.0" && data.email != "" && data.review != "") {
+                  const options = {
+                    method: 'PATCH',
+                    headers: {
+                      'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(data),
+                  };
+                  fetch(`https://energyflow.b.goit.study/api/exercises/${tempArr[i]._id}/rating`, options);
+                  success({ text: "Review was successfully added!" });
+                  document.querySelector('.rating-backdrop').classList.add("visibility");
+                  document.querySelector(".backdrop").classList.remove("visibility");
+                  document.querySelectorAll('.rating-backdrop input')[0].value = ""; 
+                  document.querySelectorAll('.rating-backdrop input')[1].value = ""; 
+                }
+                else {
+                  error({text: "All fields must be filled!"})
+                }
+              });
+
+            });
             document.querySelector('.modal > svg').addEventListener('click', () => {backdrop.classList.add('visibility')});
             backdrop.querySelector('.image').style = `background: linear-gradient(0deg, rgba(27, 27, 27, 0.20) 0%, rgba(27, 27, 27, 0.20) 100%), url(${tempArr[i].gifUrl}) lightgray -7.072px -25.893px / 107.482% 121.729% no-repeat;`;
             backdrop.querySelector('h3').textContent = `${tempArr[i].name[0].toUpperCase() + tempArr[i].name.slice(1)}`;
@@ -375,7 +441,6 @@ export default async function exercises() {
     if (val.length != 0) {
       for (let i = (current - 1) * 12; i < endPoint; i++) {
         tempArr.push(val[i]);
-        const svg = document.querySelector('.burger svg use').href.baseVal.split('#');
 
         categories.insertAdjacentHTML('beforeend',
           `<div class="exercises-card">

@@ -1,4 +1,6 @@
-document.addEventListener("DOMContentLoaded", function() {
+export default function func()
+{
+    document.addEventListener("DOMContentLoaded", function () {
     const btn = document.querySelector(".button-registration-footer");
     const input = document.querySelector(".input-registration-footer");
     
@@ -17,4 +19,5 @@ document.addEventListener("DOMContentLoaded", function() {
             alert("Пожалуйста, введите действительный адрес электронной почты.");
         }
     });
-});
+    });
+}
