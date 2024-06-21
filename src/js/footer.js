@@ -1,23 +1,37 @@
-export default function func()
-{
+export default function func() {
     document.addEventListener("DOMContentLoaded", function () {
-    const btn = document.querySelector(".button-registration-footer");
-    const input = document.querySelector(".input-registration-footer");
-    
-    btn.addEventListener("click", function() {
-        const email = input.value.trim();
-        const emailPattern = /^\w+(\.\w+)?@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/;
+        const btn = document.querySelector(".button-registration-footer");
+        const input = document.querySelector(".input-registration-footer");
         
-        if (emailPattern.test(email)) {
-            let emails = JSON.parse(localStorage.getItem('emails')) || [];
-            emails.push(email);
-            localStorage.setItem('emails', JSON.stringify(emails));
+        btn.addEventListener("click", function() {
+            const email = input.value.trim();
+            const emailPattern = /^\w+(\.\w+)?@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/;
+            
+            if (emailPattern.test(email)) {
+                let emails = JSON.parse(localStorage.getItem('emails')) || [];
+                emails.push(email);
+                localStorage.setItem('emails', JSON.stringify(emails));
 
-            alert("Ваш электронный адрес успешно сохранен!");
-            console.log('Сохраненные email:', emails);
-        } else {
-            alert("Пожалуйста, введите действительный адрес электронной почты.");
-        }
+                showNotification("Ваш електронний адрес успішно збережено!", "success");
+                console.log('Збережені email:', emails);
+            } else {
+                showNotification("Будь ласка, введіть дійсну адресу електронної пошти.", "error");
+            }
+        });
     });
-    });
+}
+
+function showNotification(message, type) {
+    const notification = document.createElement('div');
+    notification.className = `notification ${type}`;
+    notification.innerText = message;
+
+    document.body.appendChild(notification);
+
+    setTimeout(() => {
+        notification.classList.add('fade-out');
+        notification.addEventListener('transitionend', () => {
+            notification.remove();
+        });
+    }, 3000);
 }
