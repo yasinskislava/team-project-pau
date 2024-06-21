@@ -5,5 +5,5 @@ import footerFunc from './js/footer';
 
 headerFunc();
 exercisesFunc();
-// footerFunc();
+footerFunc();
 
